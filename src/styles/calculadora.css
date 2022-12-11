@@ -1,0 +1,33 @@
+body{
+    background-color: gray;
+    width: 100;
+    
+
+}
+
+button{
+    border: 1px solid;
+    min-width: 300px;
+    font-size: 150%;
+}
+
+.ac{
+    color: red;
+}
+
+table{
+    width: 100%;
+    border: 1px solid;
+    background-color: black;
+}
+#result{
+    min-width: 100vw;
+    height: 50px;
+
+}
+
+tr{
+    min-width: 100%;
+    align-items: center;
+    display: flex;
+}
