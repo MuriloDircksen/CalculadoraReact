@@ -1,6 +1,6 @@
 
-import './App.css';
-import './styles/calculadora.css'
+import BotaoCalculadora from './componentes/button.js';
+import './styles/calculadora.css';
 import React, { useState } from 'react';
 
 function App() {
@@ -8,16 +8,16 @@ function App() {
   
   function adicionaValor(valor) {
     setResultado(resultado + valor);
-    console.log(`${resultado}`)
+    
   }
   function evaluation() {
    setResultado(eval(resultado));
-    console.log(`${resultado}`)
+    
   }
 
   function apagar() {
    setResultado('');
-    console.log(resultado)
+    
   }
   return (
     <table>
@@ -25,6 +25,7 @@ function App() {
         <td ><button id="result" >{resultado}</button></td>
       </tr>
       <tr>
+        <BotaoCalculadora></BotaoCalculadora>
         <td><button onClick={() => { adicionaValor(1) }} >1</button></td>
         <td><button onClick={() => { adicionaValor(2) }} >2</button></td>
         <td><button onClick={() => { adicionaValor(3) }} >3</button></td>
