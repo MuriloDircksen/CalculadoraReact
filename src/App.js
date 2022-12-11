@@ -19,36 +19,30 @@ function App() {
     setResultado(' ');
 
   }
+  let primeiraLinha=['1', '2', '3', '+'];
+  let segundaLinha=['4', '5', '6', '-'];
+  let terceiraLinha=['7', '8', '9', '*'];
+  let quartaLinha=['0', '/'];
   return (
     <table>
       <tr>
         <td ><button id="result" >{resultado}</button></td>
       </tr>
       <tr>
-        <BotaoCalculadora valor='1' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='2' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='3' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='+' onclick={adicionaValor}></BotaoCalculadora>
-
+        {primeiraLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
+        
       </tr>
       <tr>
-        <BotaoCalculadora valor='4' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='5' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='6' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='-' onclick={adicionaValor}></BotaoCalculadora>
-
+      {segundaLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
+        
       </tr>
       <tr>
-        <BotaoCalculadora valor='7' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='8' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='9' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='*' onclick={adicionaValor}></BotaoCalculadora>
-
+      {terceiraLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
+        
       </tr>
       <tr>
-        <BotaoCalculadora valor='0' onclick={adicionaValor}></BotaoCalculadora>
-        <BotaoCalculadora valor='/' onclick={adicionaValor}></BotaoCalculadora>
-
+      {quartaLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
+        
       </tr>
       <tr>
         <BotaoCalculadora valor="AC" onclick={apagar} classe="AC"></BotaoCalculadora>
