@@ -2,9 +2,14 @@
 import './App.css';
 
 function App() {
-  let resultado=10;
+  let resultado='';
   function consolaValor(valor){
-    console.log(valor)
+    resultado = resultado + valor;
+    console.log(`${resultado}`)
+  }
+  function evaluation(){
+    resultado = eval(resultado);
+    console.log(`${resultado}`)
   }
   return (
     <table>
@@ -34,9 +39,9 @@ function App() {
       <td  id = 'bdiv'><button onClick={()=>{consolaValor('/')}}>/</button></td>          
     </tr>
     <tr>
-      <td ><button onClick={()=>{consolaValor('AC')}} className="AC">AC</button></td>
+      <td ><button onClick={()=>{}} className="AC">AC</button></td>
       <td><button onClick={()=>{consolaValor('.')}}>.</button></td>
-      <td><button onClick={()=>{consolaValor('=')}}>=</button></td>          
+      <td><button onClick={()=>{evaluation()}}>=</button></td>          
     </tr>
   </table>
   );
