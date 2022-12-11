@@ -19,31 +19,20 @@ function App() {
     setResultado(' ');
 
   }
-  let primeiraLinha=['1', '2', '3', '+'];
-  let segundaLinha=['4', '5', '6', '-'];
-  let terceiraLinha=['7', '8', '9', '*'];
-  let quartaLinha=['0', '/'];
+  let primeiraLinha = ['1', '2', '3', '+'];
+  let segundaLinha = ['4', '5', '6', '-'];
+  let terceiraLinha = ['7', '8', '9', '*'];
+  let quartaLinha = ['0', '/'];
+  let calculadora = [['1', '2', '3', '+'], ['4', '5', '6', '-'], 
+  ['7', '8', '9', '*'], ['0', '/']]
   return (
     <table>
       <tr>
         <td ><button id="result" >{resultado}</button></td>
       </tr>
-      <tr>
-        {primeiraLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
-        
-      </tr>
-      <tr>
-      {segundaLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
-        
-      </tr>
-      <tr>
-      {terceiraLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
-        
-      </tr>
-      <tr>
-      {quartaLinha.map((e) => <BotaoCalculadora valor={e} onclick={adicionaValor}></BotaoCalculadora>)}
-        
-      </tr>
+      
+        {calculadora.map((e)=> <tr>{e.map((s) => <BotaoCalculadora valor={s} onclick={adicionaValor}></BotaoCalculadora>)}</tr>)}
+      
       <tr>
         <BotaoCalculadora valor="AC" onclick={apagar} classe="AC"></BotaoCalculadora>
         <BotaoCalculadora valor='.' onclick={adicionaValor}></BotaoCalculadora>
