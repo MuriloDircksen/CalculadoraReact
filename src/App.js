@@ -4,20 +4,20 @@ import './styles/calculadora.css';
 import React, { useState } from 'react';
 
 function App() {
-  let[resultado, setResultado]= useState(' ');
-  
+  let [resultado, setResultado] = useState(' ');
+
   function adicionaValor(valor) {
     setResultado(resultado + valor);
-    
+
   }
   function evaluation() {
-   setResultado(eval(resultado));
-    
+    setResultado(eval(resultado));
+
   }
 
   function apagar() {
-   setResultado('');
-    
+    setResultado(' ');
+
   }
   return (
     <table>
@@ -25,32 +25,35 @@ function App() {
         <td ><button id="result" >{resultado}</button></td>
       </tr>
       <tr>
-        <BotaoCalculadora></BotaoCalculadora>
-        <td><button onClick={() => { adicionaValor(1) }} >1</button></td>
-        <td><button onClick={() => { adicionaValor(2) }} >2</button></td>
-        <td><button onClick={() => { adicionaValor(3) }} >3</button></td>
-        <td><button onClick={() => { adicionaValor('+') }} >+</button></td>
+        <BotaoCalculadora valor='1' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='2' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='3' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='+' onclick={adicionaValor}></BotaoCalculadora>
+
       </tr>
       <tr>
-        <td><button onClick={() => { adicionaValor(4) }} >4</button></td>
-        <td><button onClick={() => { adicionaValor(5) }} >5</button></td>
-        <td><button onClick={() => { adicionaValor(6) }} >6</button></td>
-        <td><button onClick={() => { adicionaValor('-') }} >-</button></td>
+        <BotaoCalculadora valor='4' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='5' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='6' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='-' onclick={adicionaValor}></BotaoCalculadora>
+
       </tr>
       <tr>
-        <td><button onClick={() => { adicionaValor(7) }} >7</button></td>
-        <td><button onClick={() => { adicionaValor(8) }} >8</button></td>
-        <td><button onClick={() => { adicionaValor(9) }} >9</button></td>
-        <td><button onClick={() => { adicionaValor('*') }} >*</button></td>
+        <BotaoCalculadora valor='7' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='8' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='9' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='*' onclick={adicionaValor}></BotaoCalculadora>
+
       </tr>
       <tr>
-        <td id='b0'><button onClick={() => { adicionaValor(0) }}>0</button></td>
-        <td id='bdiv'><button onClick={() => { adicionaValor('/') }}>/</button></td>
+        <BotaoCalculadora valor='0' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='/' onclick={adicionaValor}></BotaoCalculadora>
+
       </tr>
       <tr>
-        <td ><button onClick={() => { apagar() }} className="AC">AC</button></td>
-        <td><button onClick={() => { adicionaValor('.') }}>.</button></td>
-        <td><button onClick={() => { evaluation() }}>=</button></td>
+        <BotaoCalculadora valor="AC" onclick={apagar} classe="AC"></BotaoCalculadora>
+        <BotaoCalculadora valor='.' onclick={adicionaValor}></BotaoCalculadora>
+        <BotaoCalculadora valor='=' onclick={evaluation}></BotaoCalculadora>
       </tr>
     </table>
   );

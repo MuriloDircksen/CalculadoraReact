@@ -6,12 +6,12 @@ body{
 }
 
 button{
-    border: 1px solid;
+    
     min-width: 300px;
     font-size: 150%;
 }
 
-.ac{
+.AC{
     color: red;
 }
 

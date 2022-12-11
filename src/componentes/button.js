@@ -1,7 +1,7 @@
 //componetizando os botões 
-function BotaoCalculadora(){
-
-    return <td><button onClick={() => {}}>1</button></td>
+function BotaoCalculadora(param){
+    const{classe, valor, onclick} = param
+    return <td><button className={classe} onClick={() => {onclick(valor)}}>{valor}</button></td>
 
 }
 
